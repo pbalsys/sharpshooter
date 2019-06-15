@@ -6,17 +6,17 @@
                 Sharpshooter calculator
             </div>
 
-            <div class="col-xs-6 end-xs">
+            <div class="col-md-6 end-md col-xs-12">
                 Attack mod:
             </div>
-            <div class="col-xs-6 start-xs">
+            <div class="col-md-6 start-md col-xs-12">
                 <input v-model="atkRoll" placeholder="6">
             </div>
 
-            <div class="col-xs-6 end-xs">
+            <div class="col-md-6 end-md col-xs-12">
                 Damage roll:
             </div>
-            <div class="col-xs-6 start-xs">
+            <div class="col-md-6 start-md col-xs-12">
                 <input v-model="dmgRoll" placeholder="d10+3+d6">
             </div>
 
@@ -27,18 +27,18 @@
                 <!--{{dmgAvg | round}}, sharpshooter: {{dmgAvg + 10 | round}}-->
             <!--</div>-->
 
-            <div class="col-xs-6 end-xs">
+            <div class="col-md-6 end-md col-xs-12">
                 Avg dmg per attack on <input v-model="AC" placeholder="16" style="width: 35px"> AC:
             </div>
-            <div class="col-xs-6 start-xs">
-                {{dmgPerAttack | round}}, sharpshooter: {{dmgPerAttackSharpshooter | round}}
+            <div class="col-md-6 start-md col-xs-12">
+                <b>{{dmgPerAttack | round}}</b>, sharpshooter: <b>{{dmgPerAttackSharpshooter | round}}</b>
             </div>
 
-            <div class="col-xs-6 end-xs">
+            <div class="col-md-6 end-md col-xs-12">
                 Optimal AC:
             </div>
-            <div class="col-xs-6 start-xs">
-                {{optimalAC | round}}
+            <div class="col-md-6 start-md col-xs-12">
+                <b>{{optimalAC | round}}</b>
             </div>
 
             <div class="col-xs-12">
@@ -121,7 +121,7 @@
 
 <style scoped>
     .wrapper {
-        height: 100vh;
+        height: 95vh;
         font-family: Arial, sans-serif;
     }
     .title {
