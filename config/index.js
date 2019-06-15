@@ -43,7 +43,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'https://pbalsys.github.io/sharpshooter/',
+    // assetsPublicPath: 'https://pbalsys.github.io/sharpshooter/',
+    assetsPublicPath: 'sharpshooter',
 
     /**
      * Source Maps
