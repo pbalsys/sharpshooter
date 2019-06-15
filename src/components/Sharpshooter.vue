@@ -20,11 +20,18 @@
                 <input v-model="dmgRoll" placeholder="d10+3+d6">
             </div>
 
+            <!--<div class="col-xs-6 end-xs">-->
+                <!--Avg dmg per hit:-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 start-xs">-->
+                <!--{{dmgAvg | round}}, sharpshooter: {{dmgAvg + 10 | round}}-->
+            <!--</div>-->
+
             <div class="col-xs-6 end-xs">
-                Avg dmg per hit:
+                Avg dmg per attack on <input v-model="AC" placeholder="16" style="width: 35px"> AC:
             </div>
             <div class="col-xs-6 start-xs">
-                {{dmgAvg | round}}, sharpshooter: {{dmgSharpshooter | round}}
+                {{dmgPerAttack | round}}, sharpshooter: {{dmgPerAttackSharpshooter | round}}
             </div>
 
             <div class="col-xs-6 end-xs">
@@ -49,6 +56,7 @@
             return {
                 atkRoll: "6",
                 dmgRoll: "d10+3+d6",
+                AC: 16,
             }
         },
         computed: {
@@ -99,8 +107,13 @@
 
                 return atkAverage
             },
-            dmgSharpshooter() {
-                return this.dmgAvg + 10;
+            dmgPerAttack() {
+                let probability = (21 + this.atkMod - this.AC) / 20
+                return this.dmgAvg * probability
+            },
+            dmgPerAttackSharpshooter() {
+                let probability = (16 + this.atkMod - this.AC) / 20
+                return (this.dmgAvg + 10) * probability
             }
         }
     }
