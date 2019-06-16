@@ -28,7 +28,13 @@
             <!--</div>-->
 
             <div class="col-md-6 end-md col-xs-12">
-                Avg dmg per attack on <input v-model="AC" placeholder="16" style="width: 35px"> AC:
+                Avg dmg per attack on
+                <select v-model="AC">
+                    <option v-for="option in optionsAC" v-bind:value="option">
+                        {{ option }}
+                    </option>
+                </select>
+                AC:
             </div>
             <div class="col-md-6 start-md col-xs-12">
                 <b>{{dmgPerAttack | round}}</b>, sharpshooter: <b>{{dmgPerAttackSharpshooter | round}}</b>
@@ -57,6 +63,7 @@
                 atkRoll: "6",
                 dmgRoll: "d10+3+d6",
                 AC: 16,
+                optionsAC: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
             }
         },
         computed: {
